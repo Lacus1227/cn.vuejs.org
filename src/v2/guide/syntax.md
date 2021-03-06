@@ -142,10 +142,10 @@ Mustache 语法不能作用在 HTML attribute 上，遇到这种情况应该使�
 <!--
 注意，参数表达式的写法存在一些约束，如之后的“对动态参数表达式的约束”章节所述。
 -->
-<a v-bind:[attributeName]="url"> ... </a>
+<a v-bind:[attributename]="url"> ... </a>
 ```
 
-这里的 `attributeName` 会被作为一个 JavaScript 表达式进行动态求值，求得的值将会作为最终的参数来使用。例如，如果你的 Vue 实例有一个 `data` property `attributeName`，其值为 `"href"`，那么这个绑定将等价于 `v-bind:href`。
+这里的 `attributename` 会被作为一个 JavaScript 表达式进行动态求值，求得的值将会作为最终的参数来使用。例如，如果你的 Vue 实例有一个 `data` property `attributename`，其值为 `"href"`，那么这个绑定将等价于 `v-bind:href`（注意在使用动态参数时，不要用驼峰命名法，因为采用驼峰命名法声明的动态参数名会自动转换为小写，若因转换为小写而无法与Vue实例中data属性里面的属性名称对应，就会出现异常）。`Invalid value for dynamic directive argument (expected string or null):`
 
 同样地，你可以使用动态参数为一个动态的事件名绑定处理函数：
 
